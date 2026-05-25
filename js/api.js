@@ -1,8 +1,5 @@
 // api.js
-const PRODUCTION_BACKEND_URL = 'https://your-backend-url.onrender.com'; // Replace this with your backend URL once deployed
-const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-  ? 'http://localhost:8000/api/v1'
-  : `${PRODUCTION_BACKEND_URL}/api/v1`;
+const API_BASE_URL = '/api/v1';
 
 // Show a toast notification
 export function showToast(message, isError = false) {
