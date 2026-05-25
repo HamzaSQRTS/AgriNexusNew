@@ -1,0 +1,213 @@
+/* farmer.css */
+@import url('admin.css'); /* Inherit layout */
+
+/* Custom Farmer Layout Adjustments */
+.sidebar-logo-icon {
+  color: var(--teal-400);
+}
+.nav-item.active {
+  border-left-color: var(--teal-400);
+}
+.nav-item.active .nav-icon {
+  color: var(--teal-400);
+}
+.user-avatar {
+  background: var(--teal-500);
+}
+
+/* Chat Interface */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.chat-history {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.chat-msg {
+  display: flex;
+  gap: 1rem;
+  max-width: 80%;
+}
+
+.chat-msg.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.chat-msg.ai .chat-avatar { background: rgba(20, 184, 166, 0.1); color: var(--teal-400); border: 1px solid rgba(20, 184, 166, 0.3); }
+.chat-msg.user .chat-avatar { background: var(--bg-surface-elevated); color: var(--text-primary); }
+
+.chat-bubble {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  line-height: 1.5;
+}
+.chat-msg.ai .chat-bubble {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-dim);
+  border-top-left-radius: 4px;
+}
+.chat-msg.user .chat-bubble {
+  background: var(--teal-500);
+  color: #fff;
+  border-top-right-radius: 4px;
+}
+
+.chat-input-area {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-dim);
+  background: rgba(24, 24, 27, 0.5);
+}
+
+.chat-suggestions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+.chat-suggestions::-webkit-scrollbar { height: 4px; }
+.chat-suggestions::-webkit-scrollbar-thumb { background: var(--border-dim); border-radius: 4px; }
+
+.suggestion-chip {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--border-dim);
+  border-radius: 99px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.suggestion-chip:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--teal-500);
+}
+
+.chat-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  background: var(--bg-void);
+  border: 1px solid var(--border-dim);
+  border-radius: 16px;
+  padding: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: none;
+  padding: 0.5rem 0;
+  max-height: 120px;
+  min-height: 24px;
+}
+.chat-input:focus { outline: none; }
+
+.chat-actions {
+  display: flex;
+  align-items: center;
+}
+
+.chat-actions .btn-primary {
+  background: var(--teal-500);
+  width: 36px;
+  height: 36px;
+}
+
+/* Upload Interface */
+.upload-zone {
+  border: 2px dashed var(--border-light);
+  border-radius: 24px;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.upload-zone:hover, .upload-zone.dragover {
+  border-color: var(--teal-500);
+  background: rgba(20, 184, 166, 0.05);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: var(--teal-400);
+  margin-bottom: 1rem;
+}
+.upload-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.upload-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.upload-formats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.file-manager {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+.file-manager-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.file-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.file-table th, .file-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-dim);
+}
+.file-table th {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.action-btn {
+  color: var(--text-muted);
+  padding: 0.25rem;
+}
+.action-btn:hover {
+  color: var(--red-500);
+}
