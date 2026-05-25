@@ -44,10 +44,6 @@ app.include_router(admin.router, prefix=f"{settings.API_V1_STR}/admin", tags=["A
 app.include_router(farmer.router, prefix=f"{settings.API_V1_STR}/farmer", tags=["Farmer"])
 app.include_router(reports.router, prefix=f"{settings.API_V1_STR}/reports", tags=["Reports"])
 
-@app.get("/health")
-async def health():
-    return {"status": "online"}
-
-# Serve static frontend files (HTML, JS, CSS)
-from fastapi.staticfiles import StaticFiles
-app.mount("/", StaticFiles(directory=".", html=True), name="static")
+@app.get("/")
+async def root():
+    return {"message": "Welcome to AGRINEXUS AI API", "status": "online"}
